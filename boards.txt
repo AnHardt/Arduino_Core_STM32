@@ -34,7 +34,7 @@ Nucleo_144.menu.pnum.NUCLEO_F207ZG.build.variant=NUCLEO_F207ZG
 Nucleo_144.menu.pnum.NUCLEO_F207ZG.build.cmsis_lib_gcc=arm_cortexM3l_math
 
 # NUCLEO_F429ZI board
-# Support: USB HID, Serial1 (USART1 on PG9, PG14) and Serial2 (USART2 on PD6, PD5)
+  # Support: USB HID, Serial1 (USART1 on PG9, PG14) and Serial2 (USART2 on PD6, PD5)
 Nucleo_144.menu.pnum.NUCLEO_F429ZI=Nucleo F429ZI
 Nucleo_144.menu.pnum.NUCLEO_F429ZI.node=NODE_F429ZI
 Nucleo_144.menu.pnum.NUCLEO_F429ZI.upload.maximum_size=2097152
@@ -1335,7 +1335,7 @@ LoRa.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 3dprinter.build.vid=0x0483
 3dprinter.build.core=arduino
 3dprinter.build.board=3dprinter
-3dprinter.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
+3dprinter.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
 
 # ARMED_V1 board
 3dprinter.menu.pnum.ARMED_V1=Armed V1
@@ -1350,6 +1350,22 @@ LoRa.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 3dprinter.menu.pnum.ARMED_V1.build.cmsis_lib_gcc=arm_cortexM4lf_math
 3dprinter.menu.pnum.ARMED_V1.build.vid=0x0483
 3dprinter.menu.pnum.ARMED_V1.build.pid=0x5740
+
+
+# BigTreeTech_SKR_PRO_V1.1 board
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1=BTT SKR PRO V1.1
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.upload.maximum_size=1048576
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.upload.maximum_data_size=131072
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.uploar.flash_offset=0x8000
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.series=STM32F4xx
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.build.mcu=cortex-m4
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.build.cmsis_lib_gcc=arm_cortexM4lf_math
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.build.board=BTT_SKR_PRO_1V1
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.build.product_line=STM32F407xx
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.build.variant=BTT_SKR_PRO_1V1
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.build.flash_offset=0x8000
+3dprinter.menu.pnum.BTT_SKR_PRO_1V1.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags} -DVECT_TAB_OFFSET={build.flash_offset}
 
 # REMRAM_V1 board
 3dprinter.menu.pnum.REMRAM_V1=RemRam v1
